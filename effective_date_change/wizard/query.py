@@ -14,3 +14,8 @@ class QueryList:
     update_journal_entry_line_by_ref_tuple = "UPDATE account_move_line SET date = (%s) WHERE ref LIKE ANY (%s);"
     update_inventory_valuation_date = "UPDATE stock_valuation_layer SET create_date = (%s) WHERE stock_move_id = (%s)"
 
+    # SilkSoft addition
+    update_manufacturing_by_name = "UPDATE mrp_production SET date_planned_start = (%s) WHERE name = %s"
+    update_inventory_valuation_date_desc = "UPDATE stock_valuation_layer " \
+                                           "SET create_date = (%s) WHERE description = (%s)"
+    update_scraps_by_id = "UPDATE stock_scrap SET date_done = (%s) WHERE id = %s"

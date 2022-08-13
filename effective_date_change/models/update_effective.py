@@ -11,3 +11,16 @@ class UpdateEffective(models.Model):
             'view_mode': 'form',
             'target': 'new',
         }
+    # SilkSoft addition
+
+
+class UpdateEffectiveManufacturing(models.Model):
+    _inherit = "mrp.production"
+
+    def wizard_open(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'res_model': 'change.effective.wizard',
+            'view_mode': 'form',
+            'target': 'new',
+        }
